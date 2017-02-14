@@ -2,19 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.loginair.gshopping">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+
     <application
+        android:name="com.loginair.gshopping.global.GooglePlayApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+        android:theme="@style/Theme.AppCompat.Light">
+        <!-- 启动页面的activity-->
+        <activity android:name="com.loginair.gshopping.ui.activity.MainActivity"
+                  android:label="@string/app_name">
+            <intent-filter>s
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!--主页详情的activity-->
+
+
     </application>
 
 </manifest>
