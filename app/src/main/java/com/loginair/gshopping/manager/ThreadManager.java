@@ -49,7 +49,7 @@ public class ThreadManager {
         //用线程执行者执行一个Runnable对象
         public void execute(Runnable r){
             if(executor==null){
-                executor = new ThreadPoolExecutor(corePoolSize,maximumPoolSize,keepAliveTime, TimeUnit.SECONDS,new LinkedBlockingDeque<runnable>(), Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy());
+                executor = new ThreadPoolExecutor(corePoolSize,maximumPoolSize,keepAliveTime, TimeUnit.SECONDS,new LinkedBlockingDeque<Runnable>(), Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy());
             }
             executor.execute(r);
         }
