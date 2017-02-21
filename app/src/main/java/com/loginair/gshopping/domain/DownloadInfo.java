@@ -1,6 +1,9 @@
 package com.loginair.gshopping.domain;
 
+import android.app.DownloadManager;
 import android.os.Environment;
+
+import com.loginair.gshopping.manager.DownLoadManager;
 
 import java.io.File;
 
@@ -53,5 +56,23 @@ public class DownloadInfo {
         if(createDir(sb.toString())){
             return sb.toString()+File.separator+name+".apk";
         }
+    }
+
+    //把一个AppInfo转化为一个DownlaodInfo
+    public  static  DownloadInfo copy(AppInfo info){
+        DownloadInfo downloadInfo = new DownloadInfo();
+        downloadInfo.id  = info.id;
+        downloadInfo.name = info.name;
+        downloadInfo.downloadUrl = info.downloadUrl;
+        downloadInfo.packageName = info.packageName;
+        downloadInfo.size = info.size;
+
+        downloadInfo.currentPos = 0;
+        downloadInfo.currentState = DownLoadManager.STATE_UNDO;
+        downloadInfo.path = downloadInfo.getFilePath();
+
+        return downloadInfo;
+
+
     }
 }
