@@ -3,6 +3,7 @@ package com.loginair.gshopping.http.protocol;
 import com.loginair.gshopping.domain.AppInfo;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class AppProtocol extends BaseProtocol <ArrayList<AppInfo>>{
 
             }
             return list;
-        }catch(JSONObject e){
+        }catch(JSONException e){
             e.printStackTrace();
         }
 

@@ -15,8 +15,10 @@ public abstract class BaseHolder<T> {
         mRootView = initView();
         mRootView.setTag(this);
     }
+    //在new Baseholder的时候返回cell视图
     public abstract  View initView();
-    //在设置初始化数据的时候提供更新UI的方法
+
+    //在传递进去数据的时候就将数据绑定的方法写好
     public Void setData(T data){
         this.data = data;
         refreshView(data);
