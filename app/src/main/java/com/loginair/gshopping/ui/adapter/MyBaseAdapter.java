@@ -91,6 +91,7 @@ public abstract class  MyBaseAdapter<T> extends BaseAdapter {
             //如果view为null说明创建的cell还是前面几个,没有占满屏幕,还没有多的用复用cell的机制,
             //所以需要创建cell
             if(getItemViewType(i)==TYPE_MORE){
+                //如果hasMore返回false,代表隐藏底部加载更多的布局;比如那个分类的页面就是这样子;
                 holder = new MoreHolder(hasMore())
             }else{
                 holder = getHolder(i);
